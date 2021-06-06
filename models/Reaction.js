@@ -22,3 +22,5 @@ const reactionSchema = new Schema({
         default: moment().format('DD MM YYYY hh:mm:ss')
     }
 })
+
+module.exports = {reactionSchema}
