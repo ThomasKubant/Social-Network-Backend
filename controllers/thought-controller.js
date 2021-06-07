@@ -6,6 +6,7 @@ const thoughtController = {
         Thought.find({})
             .then(dbThoughtData => res.json(dbThoughtData))
             .catch(err => {
+                
                 res.status(400).json(err);
             })
     },
@@ -59,7 +60,7 @@ const thoughtController = {
         Thought.findOneAndUpdate(
             { _id: params.thoughtId },
             { $push: { reactions: body } },
-            {new: true}
+            { new: true }
         )
             .then(dbThoughtData => res.json(dbThoughtData))
             .catch(err => res.json(err))
@@ -72,7 +73,7 @@ const thoughtController = {
         )
         .then(dbThoughtData => res.json(dbThoughtData))
         .catch(err => res.json(err));
-   }
+    }
 }
 
 module.exports = thoughtController
